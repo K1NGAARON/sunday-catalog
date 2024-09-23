@@ -102,7 +102,7 @@
 }
 
 .related-products .related-product {
-    flex: 1 0 calc(100 / 8);
+    flex: 1 0 calc(100% / 8);
     display: flex;
     flex-direction: column;
 }
