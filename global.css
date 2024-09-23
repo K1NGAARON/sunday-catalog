@@ -156,3 +156,27 @@
     padding: 5px 10px;
     border-radius: 12px;
 }
+
+.design-inspiration-gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.design-inspiration-gallery .gallery-image {
+    flex: 1 0 25%;
+    display: flex;
+    overflow: hidden;
+}
+
+.design-inspiration-gallery .gallery-image img {
+    width: 100%;
+    height: auto;
+    transition: var(--transition);
+}
+
+.design-inspiration-gallery .gallery-image:hover img {
+    transform: scale(1.05);
+    transition: var(--transition);
+}
