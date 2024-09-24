@@ -165,7 +165,7 @@
 }
 
 .design-inspiration-gallery .gallery-image {
-    flex: 1 0 25%;
+    flex: 1 0 20%;
     display: flex;
     overflow: hidden;
 }
