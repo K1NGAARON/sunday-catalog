@@ -135,7 +135,7 @@ function custom_color_swatches_display() {
             
             // If the color exists, create a swatch
             if ($color) {
-                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>';
+                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid black; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>';
             }
         endwhile;
 
