@@ -1,3 +1,13 @@
+<?php
+/**
+ * Enqueue script and styles for child theme
+ */
+
+function woodmart_child_enqueue_styles() {
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( 'Version' ) );
+}
+add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
+
 function custom_price_range_display() {
     $price_min = get_field('low_price');
     $price_max = get_field('high_price');
@@ -125,9 +135,14 @@ function custom_color_swatches_display() {
             
             // If the color exists, create a swatch
             if ($color) {
-                $output .= '<div style="background-color:' . esc_attr($color) . '; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>';
+                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>';
             }
         endwhile;
+
+        // Add the "your custom pantone color" section
+        $output .= '<div class="color-swatch-item pantone-color" style="display: inline-block; margin-left: 10px; padding: 5px;">';
+        $output .= '<strong>Your Custom Pantone Color</strong>';
+        $output .= '</div>';
 
         $output .= '</div>';
     else:
@@ -138,8 +153,9 @@ function custom_color_swatches_display() {
     return $output;
 }
 
-// Create the shortcode [color_swatches]
+// Create the shortcode
 add_shortcode('color_swatches', 'custom_color_swatches_display');
+
 
 // Display mock ups on the product page
 function display_design_inspiration_gallery() {
