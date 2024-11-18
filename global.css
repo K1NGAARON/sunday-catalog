@@ -163,10 +163,11 @@
 
 .product-customization-type {
     font-size: 12px;
+    text-transform: uppercase;
     width: fit-content;
-    background: var(--e-global-color-052d5d1);
-    color: var(--white);
-    padding: 5px 10px;
+    background: #E1F3F6;
+    color: var(--black);
+    padding: 8px 24px;
     border-radius: 12px;
 }
 
