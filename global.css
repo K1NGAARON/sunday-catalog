@@ -209,3 +209,19 @@
     gap: 60px;
     width: 100%;
 }
+
+.product-tags .elementor-widget-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-tags a {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: var(--borderRadius);
+    padding: 6px 18px;
+}
