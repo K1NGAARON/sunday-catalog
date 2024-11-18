@@ -242,8 +242,8 @@
     color: var(--white);
     font-weight: 700;
     border-radius: 50px;
-    background-color: #1C1B40;
-    border: 1px solid #1C1B40;
+    background-color: #E1F3F6;
+    border: 1px solid #E1F3F6;
 }
 
 .pop-up-wrapper .wd-open-popup:hover {
