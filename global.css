@@ -15,8 +15,21 @@
     margin-bottom: 0;
 }
 
-.color-swatch-item.pantone-color {
-    display: none!important;
+.color-swatches {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.color-swatches .color-swatch-item {
+    border-radius: 9px!important;
+}
+
+.color-swatch-item.pantone-color img {
+    /* display: none!important; */
+    border-radius: 9px;
 }
 
 .product-information-table {

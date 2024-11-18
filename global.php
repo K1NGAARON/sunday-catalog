@@ -135,13 +135,14 @@ function custom_color_swatches_display() {
             
             // If the color exists, create a swatch
             if ($color) {
-                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid black; width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;"></div>';
+                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid black; width: 30px; height: 30px; border-radius: 9px; display: inline-block;"></div>';
             }
         endwhile;
 
         // Add the "your custom pantone color" section
-        $output .= '<div class="color-swatch-item pantone-color" style="display: inline-block; margin-left: 10px; padding: 5px;">';
-        $output .= '<strong>Your Custom Pantone Color</strong>';
+        $output .= '<div class="color-swatch-item pantone-color" style="display: flex; width: 30px; height: 30px;">';
+        $output .= '<img src="/wp-content/uploads/2024/11/pantone-color.jpg">';
+        $output .= '<p>Custom color</p>';
         $output .= '</div>';
 
         $output .= '</div>';
