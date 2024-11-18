@@ -239,7 +239,7 @@
 }
 
 .pop-up-wrapper .wd-open-popup {
-    color: var(--white);
+    color: var(--black);
     font-weight: 700;
     border-radius: 50px;
     background-color: #E1F3F6;
@@ -247,5 +247,5 @@
 }
 
 .pop-up-wrapper .wd-open-popup:hover {
-    color: var(--white);
+    color: var(--black);
 }
