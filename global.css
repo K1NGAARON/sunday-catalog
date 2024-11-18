@@ -217,9 +217,8 @@
 
 .wd-sizeguide {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 60px;
     width: 100%;
 }
 
@@ -237,4 +236,16 @@
     border: 1px solid var(--black);
     border-radius: var(--borderRadius);
     padding: 6px 18px;
+}
+
+.pop-up-wrapper .wd-open-popup {
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 50px;
+    background-color: #1C1B40;
+    border: 1px solid #1C1B40;
+}
+
+.pop-up-wrapper .wd-open-popup:hover {
+    color: var(--white);
 }
