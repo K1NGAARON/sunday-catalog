@@ -236,6 +236,14 @@
     border: 1px solid var(--black);
     border-radius: var(--borderRadius);
     padding: 6px 18px;
+    transition: var(--transition);
+}
+
+.product-tags a:hover {
+    color: var(--white);
+    border: 1px solid var(--black);
+    background-color: var(--black);
+    transition: var(--transition);
 }
 
 .pop-up-wrapper .wd-open-popup {
