@@ -273,3 +273,27 @@
 .single_add_to_cart_button.button {
     border-radius: 50px;
 }
+
+.aws-search-form {
+    justify-content: flex-end;
+}
+
+.aws-container .aws-search-form .aws-wrapper {
+    max-width: 200px;
+}
+
+.aws-container .aws-search-field {
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border: 1px solid #d8d8d8;
+}
+
+.aws-container .aws-search-form .aws-form-btn {
+    border-top-right-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+    background-color: #d8d8d8;
+}
+
+.aws-container .aws-search-form .aws-search-btn_icon {
+    color: var(--black);
+}
