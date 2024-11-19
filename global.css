@@ -128,7 +128,7 @@
 }
 
 .related-products .related-product {
-    flex: 1 0 calc(100% / 8);
+    flex: 0 1 calc(100% / 8);
     display: flex;
     flex-direction: column;
 }
@@ -189,7 +189,7 @@
     flex-flow: row wrap;
     gap: 20px;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -248,4 +248,13 @@
 
 .pop-up-wrapper .wd-open-popup:hover {
     color: var(--black);
+}
+
+.Custom .product-customization-type {
+    background: #FFBF46;
+    color: var(--black);
+}
+
+.single_add_to_cart_button.button {
+    border-radius: 50px;
 }
