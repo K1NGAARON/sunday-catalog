@@ -1,9 +1,13 @@
 :root {
-    --primary: #702DBD;
+    --primary: #6B29C7;
+	--primary-hover: #561FA0;
     --yellow: #FEEA02;
+    --yellow-hover: #E6D202;
     --white: #fff;
     --light-grey: #F7F7F7;
     --background: rgba(88, 88, 88, 0.3);
+    --dark-color: #1C1B40;
+    --dark-color-hover: #12112B;
     --icon-background: #3A3A3A;
     --black: #1c1c1c;
     --boxShadow: 0px 3px 6px #00000029;
@@ -88,8 +92,9 @@
 }
 
 .form-wrapper .btn:hover {
+    background-color: var(--yellow-hover);
+    border: 1px solid var(--yellow-hover);
     cursor: pointer;
-    transform: scale(1.05);
     transition: var(--transition);
 }
 
@@ -256,6 +261,8 @@
 
 .pop-up-wrapper .wd-open-popup:hover {
     color: var(--black);
+    background-color: #BBDCE1;
+    border: 1px solid #BBDCE1;
 }
 
 .Custom .product-customization-type {
