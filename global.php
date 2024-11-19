@@ -17,7 +17,7 @@ function custom_price_range_display() {
     if ($price_min && $price_max) {
         $price_range = 'Price ranging from €' . number_format($price_min, 2) . ' to €' . number_format($price_max, 2);
     } else {
-        $price_range = 'Price not available';
+        $price_range = 'Price on demand';
     }
 
     // Wrap the price range in a div
