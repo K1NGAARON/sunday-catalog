@@ -318,9 +318,36 @@
     border-radius: 50px;
 }
 
+.woocommerce-additional-fields {
+    display: none;
+}
+
 /* HIDE MONETARY VALUES */
 .aws-search-result .aws_result_price,
 .woocommerce-Price-amount.amount,
 .woocommerce-mini-cart__total.total {
     display: none;
+}
+
+.cart_totals .shop_table.shop_table_responsive {
+    display: none;
+}
+
+.cart_totals h2 {
+    display: none;
+}
+
+.woocommerce-cart-form__contents .product-price,
+.woocommerce-cart-form__contents .product-subtotal {
+    display: none;
+}
+
+.woocommerce-checkout-review-order-table .cart-subtotal,
+.woocommerce-checkout-review-order-table .order-total,
+.woocommerce-checkout-review-order-table .product-total {
+    display: none;
+}
+
+.woocommerce-terms-and-conditions-wrapper {
+    border-top: none;
 }
