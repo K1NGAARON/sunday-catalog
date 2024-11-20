@@ -351,3 +351,20 @@
 .woocommerce-terms-and-conditions-wrapper {
     border-top: none;
 }
+
+/* THANK YOU PAGE */ 
+.woocommerce-order-details .woocommerce-table--order-details tfoot {
+    display: none;
+}
+
+.woocommerce-order-detail .woocommerce-table__product-table.product-total {
+    display: none;
+}
+
+.woocommerce-order-overview__total.total {
+    display: none;
+}
+
+.woocommerce-order-overview__email.email {
+    border: none;
+}
