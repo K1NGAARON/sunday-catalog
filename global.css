@@ -297,3 +297,30 @@
 .aws-container .aws-search-form .aws-search-btn_icon {
     color: var(--black);
 }
+
+/* CART CSS */
+.cart-widget-side .woocommerce-mini-cart__buttons .btn-cart {
+    color: var(--black);
+    background-color: var(--white);
+    border: 1px solid var(--black);
+}
+
+.cart-widget-side .woocommerce-mini-cart__buttons .btn-cart:hover {
+    color: var(--white);
+    background-color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.button.checkout.wc-forward {
+    color: var(--white);
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+}
+
+/* HIDE MONETARY VALUES */
+.aws-search-result .aws_result_price,
+.woocommerce-Price-amount.amount,
+.woocommerce-mini-cart__total.total {
+    display: none;
+}
