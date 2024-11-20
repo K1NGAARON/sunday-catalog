@@ -361,6 +361,10 @@
     display: none;
 }
 
+.woocommerce-table__product-table.product-total {
+    visibility: hidden;
+}
+
 .woocommerce-order-overview__total.total {
     display: none;
 }
