@@ -75,10 +75,6 @@ function woocommerce_add_to_cart_button_text_archives() {
     return __( 'Request a quote', 'woocommerce' );
 }
 
-// Set MOQ based on field
-// Set a fallback MOQ if no specific MOQ is set
-$default_moq = 100;
-
 // Hook into WooCommerce to modify the quantity input field
 add_filter('woocommerce_quantity_input_args', 'custom_minimum_order_quantity_with_fallback', 10, 2);
 function custom_minimum_order_quantity_with_fallback($args, $product) {
@@ -95,30 +91,6 @@ function custom_minimum_order_quantity_with_fallback($args, $product) {
     $args['input_value'] = max($args['input_value'], $moq); // Ensure the input value is at least the MOQ
 
     return $args;
-}
-
-// Validate the cart to ensure MOQ is respected
-add_action('woocommerce_check_cart_items', 'check_minimum_order_quantity_with_fallback');
-function check_minimum_order_quantity_with_fallback() {
-    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-        $product_id = $cart_item['product_id'];
-        $quantity = $cart_item['quantity'];
-
-        // Get the ACF MOQ field value
-        $moq = get_field('minimum_order_quantity', $product_id);
-
-        // If no specific MOQ is set, use the fallback MOQ
-        if (!$moq) {
-            $moq = $GLOBALS['default_moq']; // Use the global variable for default MOQ
-        }
-
-        if ($quantity < $moq) {
-            wc_add_notice(
-                sprintf('The minimum order quantity for %s is %d.', $cart_item['data']->get_name(), $moq),
-                'error'
-            );
-        }
-    }
 }
 
 function custom_color_swatches_display() {
@@ -153,64 +125,3 @@ function custom_color_swatches_display() {
 
 // Create the shortcode
 add_shortcode('color_swatches', 'custom_color_swatches_display');
-
-
-// Display mock ups on the product page
-function display_design_inspiration_gallery() {
-    // Get the ACF gallery field
-    $images = get_field('mock_ups');
-
-    // Check if there are any images in the gallery
-    if( $images ):
-        $output = '<div class="design-inspiration-gallery">';
-
-        // Loop through the images and generate HTML
-        foreach( $images as $image ):
-            $img_url = $image['url']; // Full image URL
-            $img_alt = $image['alt']; // Alt text for accessibility
-            
-            $output .= '<div class="gallery-image">';
-            $output .= '<img src="' . esc_url($img_url) . '" alt="' . esc_attr($img_alt) . '" style="width:100%;">';
-            $output .= '</div>';
-        endforeach;
-
-        $output .= '</div>';
-    else:
-        $output = '<p>No design inspiration images available.</p>';
-    endif;
-
-    return $output;
-}
-
-// Create a shortcode for the gallery
-// add_shortcode('design_inspiration_gallery', 'display_design_inspiration_gallery');
-
-// Display real life pictures on the product page
-function display_real_life_gallery() {
-    // Get the ACF gallery field
-    $images = get_field('real_life');
-
-    // Check if there are any images in the gallery
-    if( $images ):
-        $output = '<div class="design-inspiration-gallery">';
-
-        // Loop through the images and generate HTML
-        foreach( $images as $image ):
-            $img_url = $image['url']; // Full image URL
-            $img_alt = $image['alt']; // Alt text for accessibility
-            
-            $output .= '<div class="gallery-image">';
-            $output .= '<img src="' . esc_url($img_url) . '" alt="' . esc_attr($img_alt) . '" style="width:100%;">';
-            $output .= '</div>';
-        endforeach;
-
-        $output .= '</div>';
-    else:
-        $output = '<p>No real life images available.</p>';
-    endif;
-
-    return $output;
-}
-
-// Create a shortcode for the real life pictures
-// add_shortcode('real_life_gallery', 'display_real_life_gallery');
