@@ -63,7 +63,6 @@ function custom_related_products_display() {
 
 add_shortcode('product_decorations', 'custom_related_products_display');
 
-
 // Change add to cart text on single product page
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
 function woocommerce_add_to_cart_button_text_single() {
@@ -77,8 +76,6 @@ function woocommerce_add_to_cart_button_text_archives() {
 }
 
 // Set MOQ based on field
-// 
-// 
 // Set a fallback MOQ if no specific MOQ is set
 $default_moq = 100;
 
@@ -186,7 +183,7 @@ function display_design_inspiration_gallery() {
 }
 
 // Create a shortcode for the gallery
-add_shortcode('design_inspiration_gallery', 'display_design_inspiration_gallery');
+// add_shortcode('design_inspiration_gallery', 'display_design_inspiration_gallery');
 
 // Display real life pictures on the product page
 function display_real_life_gallery() {
@@ -216,4 +213,4 @@ function display_real_life_gallery() {
 }
 
 // Create a shortcode for the real life pictures
-add_shortcode('real_life_gallery', 'display_real_life_gallery');
+// add_shortcode('real_life_gallery', 'display_real_life_gallery');
