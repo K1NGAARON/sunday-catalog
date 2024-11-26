@@ -125,3 +125,10 @@ function custom_color_swatches_display() {
 
 // Create the shortcode
 add_shortcode('color_swatches', 'custom_color_swatches_display');
+
+add_filter('woocommerce_order_button_text', 'custom_checkout_button_text');
+
+function custom_checkout_button_text($button_text) {
+    // Change the default text to "Request Quote"
+    return 'Request Quote';
+}

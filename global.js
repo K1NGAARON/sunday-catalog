@@ -1,19 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded');
+function waitForButtonAndUpdate() {
+    const interval = setInterval(() => {
+        const button = document.querySelector('.button.checkout.wc-forward');
+        if (button) {
+            button.textContent = 'Request Quote';
+            console.log('Button found and updated:', button);
 
-    function showPriceModal() {
-        const modalToggle = document.querySelector('.info-toggle');
-        const priceModal = document.querySelector('.price-disclaimer'); 
+            // Stop the interval once the button is found and updated
+            clearInterval(interval);
+        }
+    }, 100); // Check every 100 milliseconds
+}
 
-        // Use 'mouseenter' and 'mouseleave' instead of 'hover'
-        modalToggle.addEventListener('mouseenter', function() {
-            priceModal.classList.add('active'); 
-        });
-
-        modalToggle.addEventListener('mouseleave', function() {
-            priceModal.classList.remove('active');
-        });
-    };
-
-    showPriceModal();
-});
+// Start checking once the DOM is loaded
+document.addEventListener('DOMContentLoaded', waitForButtonAndUpdate);
