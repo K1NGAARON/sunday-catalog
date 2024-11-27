@@ -390,3 +390,11 @@
     content: "\f044"!important;
     font-family: Fontawesome!important;
 }
+
+.product-tags.categories .cat-item:hover .nav-link-text::after {
+    display: none;
+}
+
+.product-tags.categories .cat-item:hover .category-nav-link {
+    color: var(--white);
+}
