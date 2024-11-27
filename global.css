@@ -381,3 +381,12 @@
 .woocommerce-order-received .page-title {
     display: none;
 }
+
+.woocommerce-mini-cart__empty-message.empty.title {
+    display: none;
+}
+
+.wd-header-cart .wd-tools-icon:before {
+    content: "\f044"!important;
+    font-family: Fontawesome!important;
+}
