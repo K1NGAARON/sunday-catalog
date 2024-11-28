@@ -398,3 +398,17 @@
 .product-tags.categories .cat-item:hover .category-nav-link {
     color: var(--white);
 }
+
+.woocommerce-my-account-wrapper .downloads-link,
+.woocommerce-my-account-wrapper .edit-address-link {
+    display: none;
+}
+
+.woocommerce-MyAccount-navigation-link--downloads,
+.woocommerce-MyAccount-navigation-link--edit-address {
+    display: none;
+}
+
+.wd-my-account-links[class*="wd-grid"] {
+    --wd-col-lg: 4;
+}
