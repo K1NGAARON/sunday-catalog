@@ -93,42 +93,55 @@ function custom_minimum_order_quantity_with_fallback($args, $product) {
     return $args;
 }
 
-function custom_color_swatches_display() {
-    // Check if there are colors in the ACF repeater field
-    if( have_rows('colors') ):
-        $output = '<div class="color-swatches">';
-        
-        // Loop through each color in the repeater field
-        while( have_rows('colors') ): the_row();
-            $color = get_sub_field('color_picker_field');
-            
-            // If the color exists, create a swatch
-            if ($color) {
-                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid; border-color: #F1F1F1; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
-            }
-        endwhile;
-
-        // Add the "your custom pantone color" section
-        $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center;">';
-        $output .= '<div style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
-        $output .= '<p style="margin: 0; padding:0; color: black;">Custom</p>';
-        $output .= '</div>';
-
-        $output .= '</div>';
-    else:
-        $output = '<p>No colors available</p>';
-    endif;
-    
-    // Return the output to be used in a shortcode
-    return $output;
-}
-
-// Create the shortcode
-add_shortcode('color_swatches', 'custom_color_swatches_display');
-
 add_filter('woocommerce_order_button_text', 'custom_checkout_button_text');
 
 function custom_checkout_button_text($button_text) {
     // Change the default text to "Request Quote"
     return 'Request Quote';
 }
+
+///////////
+///////////
+///////////
+///////////
+///////////
+///////////
+
+// Custom color code below:
+
+function custom_color_swatches_display() {
+    $output = '<div class="color-swatches">';
+
+    // Check if there are colors in the ACF repeater field
+    if (have_rows('colors')) {
+        // Loop through each color in the repeater field
+        while (have_rows('colors')) {
+            the_row();
+            $color = get_sub_field('color_picker_field');
+            
+            // If the color exists, create a swatch
+            if ($color) {
+                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid; border-color: #F1F1F1; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
+            }
+        }
+    } else {
+        // Optionally display a message or leave empty if no colors are present
+        // $output .= '<p>No colors available</p>';
+    }
+
+    // Check if the custom color checkbox field is checked
+    if (get_field('custom_color')) { // Assumes this is a yes/no checkbox field
+        $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center;">';
+        $output .= '<div style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
+        $output .= '<p style="margin: 0; padding:0; color: black;">Custom</p>';
+        $output .= '</div>';
+    }
+
+    $output .= '</div>';
+
+    // Return the output for use in the shortcode
+    return $output;
+}
+
+// Create a single shortcode
+add_shortcode('color_swatches', 'custom_color_swatches_display');
