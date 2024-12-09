@@ -424,6 +424,11 @@
     transform: translateY(0);
 }
 
-.product-card:hover {
+.product-card .product-card-img:hover {
     cursor: pointer;
+}
+
+.product-card:hover {
+    border: 2px solid #CBCBCB;
+    transition: var(--transition);
 }
