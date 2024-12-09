@@ -432,3 +432,7 @@
     border: 2px solid #CBCBCB;
     transition: var(--transition);
 }
+
+.product-card .pantone-color p {
+    display: none;
+}
