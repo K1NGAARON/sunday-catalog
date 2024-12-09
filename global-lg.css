@@ -412,3 +412,18 @@
 .wd-my-account-links[class*="wd-grid"] {
     --wd-col-lg: 4;
 }
+
+.product-card .hover-button {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .hover-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-card:hover {
+    cursor: pointer;
+}
