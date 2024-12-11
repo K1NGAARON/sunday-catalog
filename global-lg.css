@@ -299,6 +299,10 @@
     display: none;
 }
 
+.checkout-btn button {
+    border-radius: 50px!important;
+}
+
 /* HIDE MONETARY VALUES */
 .aws-search-result .aws_result_price,
 .woocommerce-Price-amount.amount,
