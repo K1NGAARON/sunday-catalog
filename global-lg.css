@@ -417,3 +417,7 @@
     overflow-x: unset!important;
     width: 100%;
 }
+
+#menu-main-navigation {
+    gap: 40px;
+}
