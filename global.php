@@ -131,7 +131,7 @@ function custom_color_swatches_display() {
         $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center; background-color: var(--white); margin-bottom: 5px; padding: 3px;">';
         // $output .= '<div style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
         $output .= '<div style="background-image: url(https://catalog.teamsunday.com/wp-content/uploads/2024/12/custom-color.png); background-position: center center; background-repeat: no-repeat; background-size: contain; border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
-        $output .= '<p style="margin: 0; padding:0; color: black;">Custom color</p>';
+        $output .= '<p style="font-size: 14px; margin: 0; padding:0; color: black;">Custom color</p>';
         $output .= '</div>';
     }
 
