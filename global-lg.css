@@ -375,6 +375,10 @@
     color: var(--white);
 }
 
+.wd-nav[class*="wd-style-"] {
+    gap: 10px;
+}
+
 .woocommerce-my-account-wrapper .downloads-link,
 .woocommerce-my-account-wrapper .edit-address-link {
     display: none;
