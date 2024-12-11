@@ -26,6 +26,24 @@ function custom_price_range_display() {
 
 add_shortcode('price_range', 'custom_price_range_display');
 
+// New function for product card display
+function custom_price_range_product_card() {
+    $price_min = get_field('low_price');
+    $price_max = get_field('high_price');
+    
+    // Create the price range display for the product card
+    if ($price_min && $price_max) {
+        $price_range = '€' . number_format($price_min, 2) . ' - €' . number_format($price_max, 2);
+    } else {
+        $price_range = 'Price on demand';
+    }
+
+    // Wrap the price range in a div
+    return '<div class="price-range-product-card">' . $price_range . '</div>';
+}
+
+add_shortcode('price_range_product_card', 'custom_price_range_product_card');
+
 function custom_related_products_display() {
     // Get the related products from the relationship field
     $related_products = get_field('product_decorations'); // Ensure 'product_decorations' is the correct field name

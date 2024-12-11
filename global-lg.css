@@ -421,3 +421,7 @@
 #menu-main-navigation {
     gap: 40px;
 }
+
+.product-card .price-range {
+    font-size: 14px;
+}
