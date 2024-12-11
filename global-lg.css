@@ -404,3 +404,12 @@
     border: 2px solid #CBCBCB;
     transition: var(--transition);
 }
+
+.wpc-filters-main-wrap li.wpc-term-item input[type=checkbox] {
+    /* display: none; */
+}
+
+.wpc-custom-selected-terms ul.wpc-filter-chips-list {
+    overflow-x: unset!important;
+    width: 100%;
+}
