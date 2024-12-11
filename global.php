@@ -66,13 +66,13 @@ add_shortcode('product_decorations', 'custom_related_products_display');
 // Change add to cart text on single product page
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
 function woocommerce_add_to_cart_button_text_single() {
-    return __( 'Request a quote', 'woocommerce' ); 
+    return __( 'Add to quote', 'woocommerce' ); 
 }
 
 // Change add to cart text on product archives page
 add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_button_text_archives' );  
 function woocommerce_add_to_cart_button_text_archives() {
-    return __( 'Request a quote', 'woocommerce' );
+    return __( 'Add to quote', 'woocommerce' );
 }
 
 // Hook into WooCommerce to modify the quantity input field
@@ -97,7 +97,7 @@ add_filter('woocommerce_order_button_text', 'custom_checkout_button_text');
 
 function custom_checkout_button_text($button_text) {
     // Change the default text to "Request Quote"
-    return 'Request Quote';
+    return 'Add to quote';
 }
 
 ///////////
