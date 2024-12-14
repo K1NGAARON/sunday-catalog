@@ -300,7 +300,20 @@
 }
 
 .checkout-btn button {
+    background-color: var(--primary)!important;
     border-radius: 50px!important;
+    transition: var(--transition);
+}
+
+.checkout-btn button:hover {
+    background-color: var(--primary-hover)!important;
+    transition: var(--transition);
+}
+
+.order-review-wrapper {
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
 }
 
 /* HIDE MONETARY VALUES */
@@ -424,4 +437,35 @@
 
 .product-card .price-range {
     font-size: 14px;
+}
+
+.wd-wishlist-content .wd-social-icons {
+	display: none;
+}
+
+.checkout-heading h4 {
+    color: var(--primary);
+}
+
+.checkout-upload-assets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    background-image: url('https://catalog.teamsunday.com/wp-content/uploads/2024/12/download.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 20px;
+}
+
+.checkout-upload-assets span {
+    margin-bottom: 0;
+}
+
+.checkout-upload-assets input[type="button"] {
+    background-color: transparent;
 }
