@@ -167,13 +167,13 @@ add_action('wp_footer', 'truncate_shop_short_description');
 function truncate_shop_short_description() {
     if (is_shop()) { // Ensure it runs only on the shop page
         wc_enqueue_js('
-            var show_char = 100;
-            var ellipses = "...";
+            var show_char = 100; // Number of characters to show
+            var ellipses = "..."; // Ellipses to display
             $(".woocommerce-product-details__short-description").each(function() {
                 var content = $(this).html();
                 if (content.length > show_char) {
                     var truncated = content.substr(0, show_char) + ellipses;
-                    $(this).html("<span style=\'font-weight: 400;\'>" + truncated + "</span>");
+                    $(this).html("<span style=\'font-size: 14px; font-weight: 400;\'>" + truncated + "</span>");
                 }
             });
         ');
