@@ -126,7 +126,6 @@ function custom_checkout_button_text($button_text) {
 ///////////
 
 // Custom color code below:
-
 function custom_color_swatches_display() {
     $output = '<div class="color-swatches">';
 
@@ -165,7 +164,7 @@ add_shortcode('color_swatches', 'custom_color_swatches_display');
 add_action('wp_footer', 'truncate_shop_short_description');
 
 function truncate_shop_short_description() {
-    if (is_shop()) { // Ensure it runs only on the shop page
+    if (is_shop()) {
         wc_enqueue_js('
             var show_char = 100; // Number of characters to show
             var ellipses = "..."; // Ellipses to display
