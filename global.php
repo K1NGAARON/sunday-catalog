@@ -118,14 +118,7 @@ function custom_checkout_button_text($button_text) {
     return 'Request Quote';
 }
 
-///////////
-///////////
-///////////
-///////////
-///////////
-///////////
-
-// Custom color code below:
+// Custom color swatches
 function custom_color_swatches_display() {
     $output = '<div class="color-swatches">';
 
@@ -144,7 +137,7 @@ function custom_color_swatches_display() {
     } else {}
 
     // Check if the custom color checkbox field is checked
-    if (get_field('custom_color')) { // Assumes this is a yes/no checkbox field
+    if (get_field('custom_color')) {
         $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center; background-color: var(--white); margin-bottom: 5px; padding: 3px;">';
         $output .= '<div style="background-image: url(https://catalog.teamsunday.com/wp-content/uploads/2024/12/custom-color.png); background-position: center center; background-repeat: no-repeat; background-size: contain; border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
         $output .= '<p style="font-size: 14px; margin: 0; padding:0; color: black;">Custom color</p>';
