@@ -476,7 +476,8 @@
     font-size: 14px;
 }
 
-.contact-form {
+.contact-form,
+.ur-frontend-form {
     margin: unset;
     padding: unset;
     border: none;
@@ -495,10 +496,22 @@
     border-color: var(--primary);
 }
 
-.contact-form .btn {
+.contact-form .btn,
+.ur-frontend-form .button {
     color: var(--white);
     background-color: var(--primary);
     border-radius: var(--borderRadius)!important;
     margin-left: unset;
     width: 100%;
+    transition: var(--transition);
+}
+
+.ur-frontend-form .button {
+    margin-bottom: 20px;
+}
+
+.contact-form .btn:hover,
+.ur-frontend-form .button:hover {
+    background-color: var(--primary-hover);
+    transition: var(--transition);
 }
