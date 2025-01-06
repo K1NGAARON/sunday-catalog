@@ -486,8 +486,15 @@
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
+    border-color: #333332;
     border-radius: var(--borderRadius)!important;
     padding: 4px 8px!important;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.contact-form select::placeholder {
+    color: #333332!important;
 }
 
 .contact-form input:focus,
