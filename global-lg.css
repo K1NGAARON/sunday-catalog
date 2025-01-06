@@ -522,3 +522,62 @@
     background-color: var(--primary-hover);
     transition: var(--transition);
 }
+
+/* LOGIN FORM */
+.login-form .user-registration-form .ur-form-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form .user-registration-form .user-registration-form-row {
+    margin-bottom: 10px;
+}
+
+.login-form .user-registration-form .user-registration-LostPassword {
+    text-align: left;
+}
+
+.login-form .user-registration-form .user-registration-LostPassword a {
+    font-size: 14px;
+}
+
+.login-form.user-registration-form .user-registration-register a {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.login-form .ur-frontend-form .ur-form-row .ur-form-grid {
+    padding: 0;
+}
+
+.login-form .user-registration-form-row:nth-of-type(1) {
+    order: 1;
+}
+
+.login-form .user-registration-form-row:nth-of-type(2) {
+    order: 2;
+}
+
+.login-form .user-registration-LostPassword {
+    order: 3;   
+}
+
+.login-form .user-registration-form .ur-form-grid div:nth-of-type(1) {
+    order: 4;
+}
+
+.login-form .user-registration-form__label {
+    order: 5;
+}
+
+.login-form .user-registration-register {
+    order: 6;
+}
+
+.login-form p.form-row:not(.form-row-wide) {
+    display: none;
+}
+
+.login-form .user-registration-Button.button {
+    margin-bottom: 0;
+}
