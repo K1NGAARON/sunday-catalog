@@ -593,3 +593,40 @@
 .login-form .user-registration-Button.button {
     margin-bottom: 0;
 }
+
+.wd-checkout-login {
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+:is(.wd-checkout-login,.wd-checkout-coupon) :is(.woocommerce-form-coupon-toggle,.woocommerce-form-login-toggle)>div {
+    color: var(--white)!important;
+}
+
+:root :is(.woocommerce-form-coupon-toggle,.woocommerce-form-login-toggle)>div :is(.showlogin,.showcoupon) {
+    color: var(--white)!important;
+}
+
+:root :is(.woocommerce-form-coupon-toggle,.woocommerce-form-login-toggle)>div :is(.showlogin,.showcoupon):hover {
+    color: var(--white)!important;
+}
+
+.login.woocommerce-form.woocommerce-form-login label {
+    color: var(--white);
+}
+
+:is(.register,.woocommerce-form-login) .button {
+    color: var(--black)!important;
+    background-color: var(--yellow)!important;
+}
+
+:is(.register,.woocommerce-form-login) .button:hover {
+    color: var(--black)!important;
+    background-color: var(--yellow-hover)!important;
+}
