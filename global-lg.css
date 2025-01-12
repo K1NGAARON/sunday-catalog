@@ -210,7 +210,7 @@
     font-size: 12px;
     text-transform: uppercase;
     color: var(--black);
-    border: 1px solid var(--black);
+    border: 1px solid var(--white);
     border-radius: var(--borderRadius);
     padding: 6px 18px;
     transition: var(--transition);
