@@ -406,6 +406,11 @@
     --wd-col-lg: 4;
 }
 
+.product-card {
+    border: 1px solid #CBCBCB;
+    transition: var(--transition);
+}
+
 .product-card .hover-button {
     opacity: 0;
     transform: translateY(10px);
