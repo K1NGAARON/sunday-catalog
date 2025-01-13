@@ -171,3 +171,19 @@ function truncate_shop_short_description() {
         ');
     }
 }
+
+
+add_filter('acf/format_value/name=genders', function ($value, $post_id, $field) {
+    // If the value is empty, return it as-is
+    if (empty($value)) {
+        return $value;
+    }
+
+    // Check if "Unisex" is in the array
+    if (in_array('Unisex', $value)) {
+        return 'Unisex'; // Only return "Unisex" if it's checked
+    }
+
+    // Otherwise, return the values as a comma-separated list
+    return implode(', ', $value);
+}, 10, 3);
