@@ -15,28 +15,34 @@ function waitForButtonAndUpdate() {
 document.addEventListener('DOMContentLoaded', waitForButtonAndUpdate);
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Add click event listener to the element with ID "scroll-to-accordion"
-    const scrollToAccordion = document.getElementById("scroll-to-accordion");
-  
-    if (scrollToAccordion) {
-      scrollToAccordion.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent the default scroll behavior (if any)
-  
-        // Scroll to the accordion wrapper
-        const accordionWrapper = document.querySelector("#product-accordion-wrapper");
-        if (accordionWrapper) {
-          accordionWrapper.scrollIntoView({ behavior: "smooth" });
-  
-            // Close active accordion
-            // Open third accordion
+// Add click event listener to the element with ID "scroll-to-accordion"
+const scrollToAccordion = document.getElementById("scroll-to-accordion");
 
-        } else {
-          console.error("Accordion wrapper not found.");
-        }
-      });
+if (scrollToAccordion) {
+    scrollToAccordion.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default scroll behavior (if any)
+
+    // Scroll to the accordion wrapper
+    const accordionWrapper = document.querySelector("#product-accordion-wrapper");
+    if (accordionWrapper) {
+        accordionWrapper.scrollIntoView({ behavior: "smooth" });
+
+        const activeAccordion = document.querySelector('.wd-accordion-title.wd-active');
+        const activeAccordionContent = document.querySelector('.wd-accordion-content.wd-entry-content.wd-active');
+
+        activeAccordion.classList.remove("wd-active");
+        activeAccordionContent.classList.remove("wd-active");
+        activeAccordionContent.style.display = "none";
+
+        const thirdAccordion = document.querySelectorAll('.wd-accordion-title')[2];
+        const thirdAccordionContent = document.querySelectorAll('.wd-accordion-content.wd-entry-content')[2];
+        thirdAccordion.classList.add("wd-active");
+        thirdAccordionContent.classList.add("wd-active");
+        
     } else {
-      console.error("Element with ID 'scroll-to-accordion' not found.");
+        console.error("Accordion wrapper not found.");
     }
-  });
-  
+    });
+} else {
+    console.error("Element with ID 'scroll-to-accordion' not found.");
+}
