@@ -50,7 +50,7 @@ function custom_related_products_display() {
 
     // Debugging: Check if the field is returning the expected data
     if ( ! $related_products ) {
-        return '<p>Relationship field is not returning any products. Please check the ACF field setup.</p>';
+        return '';
     }
 
     // Create the HTML for related products
