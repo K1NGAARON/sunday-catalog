@@ -131,14 +131,14 @@ function custom_color_swatches_display() {
             
             // If the color exists, create a swatch
             if ($color) {
-                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid; border-color: #F1F1F1; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
+                $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid; border-color: #F6F6F6; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
             }
         }
     } else {}
 
     // Check if the custom color checkbox field is checked
     if (get_field('custom_color')) {
-        $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center; background-color: var(--white); margin-bottom: 5px; padding: 3px;">';
+        $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center; background-color: #F6F6F6; margin-bottom: 5px; padding: 3px;">';
         $output .= '<div style="background-image: url(https://catalog.teamsunday.com/wp-content/uploads/2024/12/custom-color.png); background-position: center center; background-repeat: no-repeat; background-size: contain; border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
         $output .= '<p style="font-size: 14px; margin: 0; padding:0; color: black;">Custom color</p>';
         $output .= '</div>';
