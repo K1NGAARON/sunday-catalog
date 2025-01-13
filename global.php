@@ -172,7 +172,6 @@ function truncate_shop_short_description() {
     }
 }
 
-
 add_filter('acf/format_value/name=genders', function ($value, $post_id, $field) {
     // If the value is empty, return it as-is
     if (empty($value)) {
