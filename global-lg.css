@@ -635,3 +635,16 @@
     color: var(--black)!important;
     background-color: var(--yellow-hover)!important;
 }
+
+.whb-top-bar {
+    padding: 10px;
+}
+
+.whb-top-bar .container {
+    width: fit-content;
+}
+
+.whb-top-bar .wd-header-text {
+    font-size: 14px!important;
+    color: var(--white);
+}
