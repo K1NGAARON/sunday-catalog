@@ -153,11 +153,11 @@ function custom_color_swatches_display() {
 // Create a single shortcode
 add_shortcode('color_swatches', 'custom_color_swatches_display');
 
-// Truncate product short description on the shop page
-add_action('wp_footer', 'truncate_shop_short_description');
+// Truncate product short description on shop and product pages
+add_action('wp_footer', 'truncate_short_description');
 
-function truncate_shop_short_description() {
-    if (is_shop()) {
+function truncate_short_description() {
+    if (is_shop() || is_product()) { // Apply to both shop and product pages
         wc_enqueue_js('
             var show_char = 100; // Number of characters to show
             var ellipses = "..."; // Ellipses to display
