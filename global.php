@@ -4,14 +4,14 @@
  */
 
 function woodmart_child_enqueue_styles() {
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( 'Version' ) );
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'woodmart-style' ), woodmart_get_theme_info( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 
 function custom_price_range_display() {
     $price_min = get_field('low_price');
     $price_max = get_field('high_price');
-    
+
     // Create the price range display
     $price_range = '';
     if ($price_min && $price_max) {
@@ -30,7 +30,7 @@ add_shortcode('price_range', 'custom_price_range_display');
 function custom_price_range_product_card() {
     $price_min = get_field('low_price');
     $price_max = get_field('high_price');
-    
+
     // Create the price range display for the product card
     if ($price_min && $price_max) {
         $price_range = '€' . number_format($price_min, 2) . ' - €' . number_format($price_max, 2);
@@ -62,7 +62,7 @@ function custom_related_products_display() {
             $product_title = get_the_title($product_id);
             $product_link = get_permalink($product_id);
             $product_image = get_the_post_thumbnail($product_id, 'thumbnail'); // You can use 'thumbnail', 'medium', 'large', or 'full'
-            
+
             $products_html .= '<div class="related-product">';
             $products_html .= '<a href="' . esc_url($product_link) . '">';
             $products_html .= $product_image; // Display the featured image
@@ -82,13 +82,13 @@ function custom_related_products_display() {
 add_shortcode('product_decorations', 'custom_related_products_display');
 
 // Change add to cart text on single product page
-add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' );
 function woocommerce_add_to_cart_button_text_single() {
-    return __( 'Add to quote', 'woocommerce' ); 
+    return __( 'Add to quote', 'woocommerce' );
 }
 
 // Change add to cart text on product archives page
-add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_button_text_archives' );  
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_button_text_archives' );
 function woocommerce_add_to_cart_button_text_archives() {
     return __( 'Add to quote', 'woocommerce' );
 }
@@ -128,7 +128,7 @@ function custom_color_swatches_display() {
         while (have_rows('colors')) {
             the_row();
             $color = get_sub_field('color_picker_field');
-            
+
             // If the color exists, create a swatch
             if ($color) {
                 $output .= '<div class="color-swatch-item" style="background-color:' . esc_attr($color) . '; border: 1px solid; border-color: #F6F6F6; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
@@ -139,7 +139,7 @@ function custom_color_swatches_display() {
     // Check if the custom color checkbox field is checked
     if (get_field('custom_color')) {
         $output .= '<div class="color-swatch-item pantone-color" style="display: flex; gap: 10px; align-items:center; background-color: #F6F6F6; margin-bottom: 5px; padding: 3px;">';
-        $output .= '<div style="background-image: url(https://catalog.teamsunday.com/wp-content/uploads/2024/12/custom-color.png); background-position: center center; background-repeat: no-repeat; background-size: contain; border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
+        $output .= '<div style="background-image: url(https://catalog.teamsunday.com/wp-content/uploads/2025/02/custom-color.svg); background-position: center center; background-repeat: no-repeat; background-size: contain; border: none; width: 20px; height: 20px; border-radius: 9px; display: inline-block;"></div>';
         $output .= '<p style="font-size: 14px; margin: 0; padding:0; color: black;">Custom color</p>';
         $output .= '</div>';
     }
