@@ -1,34 +1,48 @@
 <?php
 
-function custom_related_products_display() {
-    $related_products = get_field('product_decorations');
+function display_related_decorations($atts) {
+    $atts = shortcode_atts(
+        array(
+            'field' => '',
+        ), 
+        $atts, 
+        'decoration_products'
+    );
 
-    if ( ! $related_products ) {
-        return '';
+    if (empty($atts['field'])) {
+        return '<p>No decoration field provided.</p>';
     }
 
-    $products_html = '';
-    if ($related_products) {
-        $products_html .= '<div class="related-products">';
-        foreach ($related_products as $product) {
-            $product_id = $product->ID;
-            $product_title = get_the_title($product_id);
-            $product_link = get_permalink($product_id);
-            $product_image = get_the_post_thumbnail($product_id, 'thumbnail');
+    $related_products = get_field($atts['field']);
 
-            $products_html .= '<div class="related-product">';
-            $products_html .= '<a href="' . esc_url($product_link) . '">';
-            $products_html .= $product_image;
-            $products_html .= '<p>' . esc_html($product_title) . '</p>';
-            $products_html .= '</a>';
-            $products_html .= '</div>';
-        }
-        $products_html .= '</div>';
-    } else {
-        $products_html = '<p>No related products available.</p>';
+    if (!$related_products) {
+        return ''; // Return empty if no related products are found
     }
 
-    return '<div class="related-products-wrapper">' . $products_html . '</div>';
+    $output = '<div class="related-decorations">';
+    
+    foreach ($related_products as $product) {
+        $product_id = $product->ID;
+        $product_title = get_the_title($product_id);
+        $product_link = get_permalink($product_id);
+        $product_image = get_the_post_thumbnail($product_id, 'thumbnail');
+
+        $output .= '<div class="decoration-item">';
+        $output .= '<a href="' . esc_url($product_link) . '">';
+        $output .= $product_image;
+        $output .= '<p>' . esc_html($product_title) . '</p>';
+        $output .= '</a>';
+        $output .= '</div>';
+    }
+
+    $output .= '</div>';
+
+    return $output;
 }
 
-add_shortcode('product_decorations', 'custom_related_products_display');
+add_shortcode('decoration_products', 'display_related_decorations');
+
+
+// [decoration_products field="product_decorations_embroidery"]
+// [decoration_products field="product_decorations_printing"]
+// [decoration_products field="product_decorations_heat_transfer"]
